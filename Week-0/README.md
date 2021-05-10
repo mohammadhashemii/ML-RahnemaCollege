@@ -91,3 +91,8 @@ If you want to filter on multiple values of a categorical variable, the easiest 
 is_black_or_brown = dogs["color"].isin(["Black", "Brown"])
 dogs[is_black_or_brown]
 ```
+#### 1.1.10) Adding a new column
+Creating and adding new columns can go by many names, including mutating a DataFrame, transforming a DataFrame and a feature engineering.
+```
+dogs["height_m"] = dogs["height_cm"] / 100
+```
