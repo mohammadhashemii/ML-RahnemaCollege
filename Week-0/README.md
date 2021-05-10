@@ -1,94 +1,93 @@
-# Machine Learning Intern Materials at RahnemaCollege
-
-This repository contains all the materials, codes, notes and etc. for Rahnema College internship.
+# Week-0: Warp Up
 
 
-| Folder | Description |
-|--|--|
-| [*Week#0/*]() | Warm Up. |
-| [*Week#1/*]() | Mathematics(Statistics & Probabilistics). |
-| [*Week#2/*]() | Optimization/ Machine Learning Fundamentals. |
-| [*Week#3/*]() | Classification & Deep learning Fundamentals. |
-| [*Week#4/*]() | Convolutional Neural Networks(CNNs). |
-| [*Week#5/*]() | Recursive Neural Networks(RNNs) & Ensemble Learning. |
-| [*Week#6/*]() | Review & Presentation. |
-| [*Week#7/*]() | Big Data. |
-| [*Week#8/*]() | Final Presentation. |
+## TODO
 
-## Description
+In this week, we will cover some fundamental tools for Machine Learning:
 
-Implement a simple mesh simplification using:
+- *Pandas*: for data manipulation in python
+- *Scipy*: Statistical analysis
+- *Matplotlib*: Data visualization
 
-- priority queue
-- vertex removal
+And
+- Flask: for generating custom APIs.
 
-## Building on Linux
+## 1) *Pandas*
 
-I have used Ubuntu 14.04 for the project. For other versions the instructions should be similar (check [OpenGL Tutorial](http://www.opengl-tutorial.org/) for other distributions or operating systems).
+The course materials which are used for this section are adapted from [Data Camp](https://learn.datacamp.com/skill-tracks/data-manipulation-with-python).
 
-### Dependencies
+### 1.1) *Course-1: Data Manipulation with Pandas*
 
-- Install the latest drivers
-- Install all needed compilers, tools & libs:
+In this section, some basic and even advance commands and syntaxes of pandas will be reviwed.
 
-``` $ sudo apt-get install cmake make g++ libx11-dev libxi-dev libgl1-mesa-dev libglu1-mesa-dev libxrandr-dev libxext-dev libxi-dev ```
+Pandas is butil on Numpy and Matplotlib. Rectangular data(Tabular data) is the most common way to represenet data.
 
-### Building
+In pandas, recatngular data is shown in **DataFrame** objects.
 
-After clone or download (and unzip) the repository go to the root and type:
+#### 1.1.1) Exploring a DataFrame: **.head()**
+If we want to quickly explore whats going on in a particular dataset we must use:
 
 ```
-$ cd Assignment-01/external/glfw-3.0.3
-$ cmake .
-$ make all
-$ cd ../..
-$ mkdir build
-$ cd build
-$ cmake ..
-$ make all
+df.head()
+```
+#### 1.1.2) Exploring a DataFrame: **.info()**
+The info method displays the names of the columns, the data types they contain, and whether they have any missing values.
+
+```
+df.info()
+```
+#### 1.1.3) Exploring a DataFrame: **.describe()**
+The describe method computes some summary statistics for numerical columns. like mean and median. "count" is the number of non-missing values in each column.
+
+```
+df.describe()
 ```
 
-I've used CLion IDE for running and debugging, so the execution could be done using the graphical interface of the IDE.
+DataFrames consist of three different components, accessible using attributes. 
 
+#### 1.1.4) Components of a DataFrame: **.value**
+The values attribute, as you might expect, contains the data values in a 2-dimensional Numpy array.
 
-## Mesh Simplification
+```
+df.values
+```
+#### 1.1.5) Components of a DataFrame:**.columns** and **.index**
+The other two components of a DataFrame are labels for columns and rows. The columns attribute contains column names, and the index attribute contains row numbers or row names. Be careful, since row labels are stored in dot-index, not in dot-rows.
 
+```
+df.columns
+df.index
+```
 
+Now we'll cover the two simplest and possibly most important ways to find interestin parts of the DataFrame.
 
-### 1. Priority Queue
+#### 1.1.6) **Sorting**
 
-The heuristic defined for vertex removal is described on pseudo-code as follows:
+```
+dogs.sort_values("weight_kg", ascending=False)
+dogs.sort_values(["weight_kg", "height_cm"])
+```
 
-- Go through all the vertex and calculate their connection with others (edges)
-- Store the edges on a 2D vector together with the 'index' of its vertex
-- Sort the vector by the size of the edges (smallest first)
-- Get the first position of the vector which contains the two vertex to be compared
-- Verify which of the two vertex has more connections (v1) and choose to be removed
+#### 1.1.7) **Subsetting columns**
+We may want to zoom in on just one column. We can do this using the DataFrame, followed by sqaure brackets with a column name inside.
 
+```
+dogs.["name"]
+dogs.[["name", "height_cm"]]
+```
+#### 1.1.8) **Subsetting rows**
+There are several ways to subset rows. The most common way to do this is by creating a logical condition to filter against.
 
-### 2. Half-Edge Collapse
+```
+dogs[dogs["height_cm"] > 50]
+dogs[dogs["date_of_birth"] > "2015-01-01"]
+dogs[(dogs["breed"] == "Labrador") & (dogs["color"] == "Brown")]
+```
 
-The technique chosen for vertex removal was the *Half-Edge Collapse* which works removing a vertex and reconnecting all its connections to another vertex:
+#### 1.1.9) Subsetting using **.isin()**
+If you want to filter on multiple values of a categorical variable, the easiest way is to use the isin method.
 
-
-![Half-Edge Collapse](http://jcae.sourceforge.net/amibe-doc/org/jcae/mesh/amibe/ds/doc-files/AbstractHalfEdge-2.png)
-
-
-Pseudo-code:
-
-- Go to the vertex to be removed (v1 - defined on priority queue)
-- Check all the vertex that are connected to that vertex
-- Remove v1 and reconnect all its connections to v2  
-
-
-## References
-
-
-David Luebke, Benjamin Watson, Jonathan D. Cohen, Martin Reddy, and Amitabh Varshney. 2002. *Level of Detail for 3D Graphics*. Elsevier Science Inc., New York, NY, USA.
-
-OpenGL Tutorials. *Tutorial 1: Opening a Window*, Available at: http://www.opengl-tutorial.org/beginners-tutorials/tutorial-1-opening-a-window/ (Accessed: 3rd April 2016).
-
-Mesh Simplification. Standford course (CS 468-10-fall) Lecture Notes. Available on: http://graphics.stanford.edu/courses/cs468-10-fall/LectureSlides/08_Simplification.pdf
-
-Shene, Ching-Kuang. *Mesh Simplification*. Classes notes. Michigan Technological University. Available on:
-http://www.cs.mtu.edu/~shene/COURSES/cs3621/SLIDES/Simplification.pdf
+```
+is_black_or_brown = dogs["color"].isin(["Black", "Brown"])
+dogs[is_black_or_brown]
+```
