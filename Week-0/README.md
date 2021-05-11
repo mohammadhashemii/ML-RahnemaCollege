@@ -96,3 +96,16 @@ Creating and adding new columns can go by many names, including mutating a DataF
 ```
 dogs["height_m"] = dogs["height_cm"] / 100
 ```
+
+## 2) *Flask*
+
+This part is taught by Patrick Smyth in [Creating Web APIs with Python and Flask](https://programminghistorian.org/en/lessons/creating-apis-with-python-and-flask). Two basic (Hello world) web APIs are implemented in `api/`.
+
+To run them, you need [Flask](https://flask.palletsprojects.com) installed, then enter these commands in your terminal or cmd:
+
+```
+$ cd path/to/your/dir
+$ python api.py
+```
+
+Then, follow the link above, http://127.0.0.1:5000/, using your web browser to see the running application.
