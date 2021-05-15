@@ -48,9 +48,9 @@ Examples of vector spaces(see the proofs in the course videos):
 
 Linear Dependency
 --------------
-Definition 1: A vector *v* is called a linear combination of the vectors *{v1, v2, ..., vn}* if *v = 𝜶1v1 + 𝜶2v2 + ... + 𝜶nvn* .
+**Definition 1:** A vector *v* is called a linear combination of the vectors *{v1, v2, ..., vn}* if *v = 𝜶1v1 + 𝜶2v2 + ... + 𝜶nvn* .
 
-Definition 2: The set of all vectors *V* as above is called the **linear span** of the set *{v1, v2, ..., vn}* and is denoted by: 
+**Definition 2:** The set of all vectors *V* as above is called the **linear span** of the set *{v1, v2, ..., vn}* and is denoted by: 
 
 ***span(v1, v2, ..., vn) = <v1, v2, ..., vn>***.
 
@@ -62,6 +62,20 @@ Fact: *span(v1, v2, ..., vn)* is the smallest subspace of *V* containing *{v1, v
 
 ![](https://github.com/mohammadhashemii/ML-RahnemaCollege/blob/master/Week-1/images/1_span2.png)
 
-Definition 3: A set *{v1, v2, ..., vn}⊂ V* is called **linearly dependant** if there exist *𝜶1, 𝜶2, ..., 𝜶n ∈ R*, not all of which are 0, such that *𝜶1v1, 𝜶2v2, ..., 𝜶nvn= 0*.
+**Definition 3 - Linear Independency**: A set *{v1, v2, ..., vn}⊂ V* is called **linearly dependant** if there exist *𝜶1, 𝜶2, ..., 𝜶n ∈ R*, not all of which are 0, such that *𝜶1v1, 𝜶2v2, ..., 𝜶nvn= 0*.
 
 Which means that at least one of the vectors like *vi* can be written as the linear combination of other vectors in *{v1, v2, ..., vi, ..., vn}*.
+
+**Definition 4 - Linear Dependency**: A set *{v1, v2, ..., vn}⊂ V* which is not linearly dependent is called linearly independent, i.e. if *𝜶1v1, 𝜶2v2, ..., 𝜶nvn= 0*.
+
+for some *𝜶1, 𝜶2, ..., 𝜶n ∈ R* then all *𝜶i*'s are **zero**.
+
+**Definition 5 - Basis:** Any liearly independence set *{v1, v2, ..., vn} ⊂ V* which spans *V* is called a basis for vector space *V*.
+
+By definition, for every *v ∈ V*
+
+*v = 𝜶1v1 + 𝜶2v2 + ... + 𝜶nvn*
+
+Also this representation is unique.(Proof is in slides)
+
+**Definition 6 - Coordinates in basis:** The vector *v = [𝜶1v1, 𝜶2v2, ..., 𝜶nvn] ^ T* is called the coordinate vector of *v* relative to ordered basis *{v1, v2, ...m vn}*.
