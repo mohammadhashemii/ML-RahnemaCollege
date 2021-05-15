@@ -11,7 +11,8 @@ Table of contents
 <!--ts-->
    * [Linear Algebra](#linear-Algebra)
       * [Vector Spaces](#vector-spaces)
-      * [Linear Dependecy](#linear-dependency)
+      * [Linear Dependency](#linear-dependency)
+      * [Linear Transformation](#linear-transformation)
       * [Determinant](#determinant)
       * [Eigen Value Decomposition](#eigen-value-decomposition)
       * [Singular Value Decomposition](#singular-value-decompostion)
@@ -47,3 +48,8 @@ Examples of vector spaces(see the proofs in the course videos):
 
 Linear Dependency
 --------------
+Definition 1: A vector *v* is called a linear combination of the vectors *{v1, v2, ..., vn}* if *v = 𝜶1v1 + 𝜶2v2 + ... + 𝜶nvn* .
+
+Definition 2: The set of all vectors *V* as above is called the **linear span** of the set *{v1, v2, ..., vn}* and is denoted by: ***span(v1, v2, ..., vn) = <v1, v2, ..., vn>***.
+
+![](https://github.com/mohammadhashemii/ML-RahnemaCollege/blob/master/Week-1/images/0_span.png)
