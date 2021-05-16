@@ -96,3 +96,19 @@ Some examples of valid linear transformations:
 3. For *A ∈ M_mxn(R)*, the mapping *T : R^n -> R^m* given by **T(X) = AX** is a linear map. **In fact every other linear map *T': R^n -> R^m* is of this form**.
 
 ![](https://github.com/mohammadhashemii/ML-RahnemaCollege/blob/master/Week-1/images/4_linear-transformation.png)
+
+Properties of linear transformation:
+1. For each linear map *T: V -> W, T(0_v) = 0_w*
+2. Linear maps send linear combination to linear combinations, So the image of a linear map *T: V -> W*  given by *img(T) = {T(v): v ∈ V}* is a subspace of *W*. Dimension of this subspace is called the rank of *T*.
+3. If *{v1, ..., vn}* is a basis for *V*, then every linear map from *V* to another vector space *W* is uniquely determined by *{T(v1), ..., T(vn)}*.
+4. **Kernel** or null-space of a linear map defined by 
+
+*ker(T) = {v ∈ V: T(v) = 0}*
+
+is a subspace of *V*. Dimension of this subspace is called the nullity of *T*.
+
+![](https://github.com/mohammadhashemii/ML-RahnemaCollege/blob/master/Week-1/images/5_kernel.png)
+
+5. ***Rank(T) + nullity(T) = dim(V)***
+6. The set of all linear maps between *V* and *W* denoted by I *L(V, W)* is itself a vector space.
+
