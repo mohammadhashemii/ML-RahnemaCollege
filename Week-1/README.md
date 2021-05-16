@@ -112,3 +112,18 @@ is a subspace of *V*. Dimension of this subspace is called the nullity of *T*.
 5. ***Rank(T) + nullity(T) = dim(V)***
 6. The set of all linear maps between *V* and *W* denoted by I *L(V, W)* is itself a vector space.
 
+Determinant
+--------------
+Properties of determinant:
+1. If matrix has two equal rows, then *det(A) = 0*.
+2. If *A'* is obtained by interchanging two rows of *A*, then *det(A) = - det(A')*.
+3. There exists exactly one function with the above properties(See the proof of this theorem in the slides).
+
+Other properties:
+- *det(A^T) = det(A)*
+- *det(A)* is non zero iff *A* is invertible, in which case *det(A^-1) = 1/det(A)*.
+- *det(AB) = det(A).det(B)*.
+- For both triangular and diagonal matrices, *det(A) = a00 x a11 x ... x ann*.
+- *det(A) != 0* iff the rows(respectively, columns) of *A are linearly indepedent.
+
+Note: See the geometric applications of determinant in the slides.
