@@ -79,3 +79,20 @@ By definition, for every *v ∈ V*
 Also this representation is unique.(Proof is in slides)
 
 **Definition 6 - Coordinates in basis:** The vector *v = [𝜶1v1, 𝜶2v2, ..., 𝜶nvn] ^ T* is called the coordinate vector of *v* relative to ordered basis *{v1, v2, ...m vn}*.
+
+Linear Transformation
+--------------
+
+Definition: Let *V* and *W* be two vector spaces. A function *T: V -> W* is called linear map or a linear transformation if for all *v, u ∈ V,*:
+
+*T(𝜶v + u) = 𝜶T(v) + T(u)*.
+
+Important note: In the equation above, the addition operation in the left hand side is the one in the *V* vector space, on the other hand the right hand addition operation is in *W*.
+
+Some examples of valid linear transformations:
+
+1. The identity function *I: V -> V* given by *I(v) = v*
+2. For any fixed scalar 𝜶, the mapping: *S_𝜶: V -> V* given by *S_𝜶(v) = 𝜶.v*.
+3. For *A ∈ M_mxn(R)*, the mapping *T : R^n -> R^m* given by **T(X) = AX** is a linear map. **In fact every other linear map *T': R^n -> R^m* is of this form**.
+
+![](https://github.com/mohammadhashemii/ML-RahnemaCollege/blob/master/Week-1/images/4_linear-transformation.png)
